@@ -1,0 +1,109 @@
+:root {
+    --pink-color: #e26e70;
+}
+
+.container {
+    background-image: linear-gradient(to right, #f8b8fd, #f571df);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.button__open-modal {
+    background-color: white;
+    width: 150px;
+    height: 60px;
+    border: 0;
+    border-radius: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal {
+    background-color: white;
+    width: 450px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: animation-modal 0.3s linear;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--pink-color);
+        padding: 1px 20px;
+        h4 {
+            color: white;
+            margin: 15px 0px;
+        }
+
+        &__button-close {
+            cursor: pointer;
+            i {
+                color: white;
+                font-size: 25px;
+            }
+        }
+    }
+    &__body {
+        padding: 0px 5px;
+        margin: 0px 5px;
+
+        h2 {
+            padding: 0;
+            margin: 0;
+            color: var(--pink-color);
+        }
+        p {
+            margin-top: 10px;
+            padding: 0;
+        }
+    }
+
+    &__button {
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 15px;
+
+        button {
+            border-radius: 5px;
+            cursor: pointer;
+            border: 0;
+            width: 80px;
+            height: 40px;
+            color: white;
+            font-size: 15px;
+            background-color: var(--pink-color);
+        }
+    }
+}
+
+.bg-inner {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    z-index: 1;
+}
+
+@keyframes animation-modal {
+    0% {
+        top: 30%;
+        opacity: 0;
+    }
+    100% {
+        top: 50%;
+        opacity: 1;
+    }
+}

@@ -1,9 +1,11 @@
 :root {
     --pink-color: #e26e70;
+    --bg: rgb(65, 88, 208) 0%, rgb(200, 80, 192) 50%, rgb(255, 204, 112) 100%;
 }
 
 .container {
-    background-image: linear-gradient(to right, #f8b8fd, #f571df);
+    background-image: linear-gradient(45deg, var(--bg));
+    overflow: hidden;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -14,12 +16,11 @@
 
 .button__open-modal {
     background-color: white;
-    width: 150px;
-    height: 60px;
     border: 0;
-    border-radius: 15px;
+    border-radius: 6px;
     font-size: 20px;
     cursor: pointer;
+    padding: 20px 40px;
 }
 
 .modal {
@@ -40,32 +41,27 @@
         justify-content: space-between;
         align-items: center;
         background-color: var(--pink-color);
-        padding: 1px 20px;
-        h4 {
-            color: white;
-            margin: 15px 0px;
+        padding: 15px;
+        font-size: 17px;
+        color: white;
+        p {
+            margin: 0;
+            padding: 0;
         }
 
-        &__button-close {
+        i {
             cursor: pointer;
-            i {
-                color: white;
-                font-size: 25px;
-            }
+            font-size: 18px;
         }
     }
     &__body {
-        padding: 0px 5px;
-        margin: 0px 5px;
+        padding: 15px;
 
         h2 {
             padding: 0;
             margin: 0;
+            font-size: 1.5em;
             color: var(--pink-color);
-        }
-        p {
-            margin-top: 10px;
-            padding: 0;
         }
     }
 
@@ -80,8 +76,7 @@
             border-radius: 5px;
             cursor: pointer;
             border: 0;
-            width: 80px;
-            height: 40px;
+            padding: 10px 20px;
             color: white;
             font-size: 15px;
             background-color: var(--pink-color);

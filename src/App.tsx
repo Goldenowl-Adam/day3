@@ -6,34 +6,34 @@ function App() {
     const [open, setOpen] = useState(false);
 
     return (
-        <div
-            className="container"
-            onClick={() => {
-                if (open) {
-                    setOpen(false);
-                }
-            }}
-        >
-            {open && <div className="bg-inner"></div>}
+        <div className="container">
+            {open && (
+                <div
+                    className="bg-inner "
+                    onClick={() => {
+                        if (open) {
+                            setOpen(false);
+                        }
+                    }}
+                ></div>
+            )}
             {!open && (
                 <button
                     className="button__open-modal"
                     onClick={() => setOpen((prev) => !prev)}
                 >
-                    Open modal
+                    Open Modal
                 </button>
             )}
 
             {open && (
                 <div className="modal">
                     <div className="modal__header">
-                        <h4>Welcome to Nodemy</h4>
-                        <div
-                            className="modal__header__button-close"
+                        <p>Welcome to Nodemy</p>
+                        <i
+                            className="fa-solid fa-xmark"
                             onClick={() => setOpen(false)}
-                        >
-                            <i className="fa-solid fa-xmark"></i>
-                        </div>
+                        ></i>
                     </div>
                     <div className="modal__body">
                         <h2>Modal</h2>

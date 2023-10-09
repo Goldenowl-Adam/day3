@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import './style.scss';
+import { Modal } from './components/modal';
 
 function App() {
     const [open, setOpen] = useState(false);
@@ -26,24 +27,7 @@ function App() {
                 </button>
             )}
 
-            {open && (
-                <div className="modal">
-                    <div className="modal__header">
-                        <p>Welcome to Nodemy</p>
-                        <i
-                            className="fa-solid fa-xmark"
-                            onClick={() => setOpen(false)}
-                        ></i>
-                    </div>
-                    <div className="modal__body">
-                        <h2>Modal</h2>
-                        <p>Đây là phàn body của Modal</p>
-                    </div>
-                    <div className="modal__button">
-                        <button onClick={() => setOpen(false)}>Close</button>
-                    </div>
-                </div>
-            )}
+            {open && <Modal setOpen={setOpen} />}
         </div>
     );
 }
